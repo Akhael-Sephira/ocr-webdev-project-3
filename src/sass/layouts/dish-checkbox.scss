@@ -1,0 +1,74 @@
+.dish-checkbox {
+    --transition-duration: .5s;
+    --indicator-size: 4rem;
+
+    display: flex;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    overflow: hidden;
+
+    &__container {
+        display: grid;
+        grid-template: 
+            "title title"
+            "info price" / auto auto;
+        gap: .5rem;
+        flex-shrink: 0;
+        width: 100%;
+        padding: 1rem;
+
+        transition: width var(--transition-duration) ease;
+    }
+    &__title,
+    &__info,
+    &__price {
+        margin: 0;
+    } 
+    &__title,
+    &__info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } 
+    &__title {
+        grid-area: title;
+    }
+    &__info {
+        grid-area: info;
+    }
+    &__price {
+        grid-area: price;
+        justify-self: flex-end;
+        font-weight: 500;
+    }
+    &__indicator {
+        color: white;
+        background-color: var(--clr-ter);
+        width: var(--indicator-size);
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            transform: rotateZ(-360deg);
+            transition: transform var(--transition-duration) ease;
+        }
+    }
+
+    input {
+
+        display: none;
+
+        &:checked ~ .dish-checkbox__container {
+            width: calc(100% - var(--indicator-size));
+        }
+        &:checked ~ .dish-checkbox__indicator {
+            i {
+                transform: rotateZ(0deg);
+            }
+        }
+    }
+
+}
