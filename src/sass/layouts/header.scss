@@ -9,4 +9,12 @@
 
     z-index: 1;
     position: relative;
+
+    &__home-btn {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 50%;
+        left: 1.5ch;
+        transform: translate(0%, -50%);
+    }
 }
