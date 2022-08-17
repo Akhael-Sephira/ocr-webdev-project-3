@@ -47,39 +47,9 @@
         display: grid;
         align-items: center;
 
-        svg {
+        > svg {
             width: 100%;
             height: 100%;
-
-            #Gradient1 {
-                .stop1 {
-                    stop-color: var(--clr-pri);
-                }
-                .stop2 {
-                    stop-color: var(--clr-sec);
-                }
-            }
-
-            #inner-fill-2 {
-                fill: url(#Gradient1);
-                transform: translateY(100%);
-                transition: transform .5s ease;
-            }
-            #inner-fill {
-                fill: var(--card-bg);
-            }
-            #outer-fill {
-                fill: var(--clr-neutral-600);
-            }
-            &:hover {
-                #inner-fill-2 {
-                    transform: translateY(0%);
-                }
-                #outer-fill {
-                    fill: url(#Gradient1);
-                }
-            }
-
         }
     }
 
