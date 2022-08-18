@@ -52,6 +52,27 @@
         display: grid;
         gap: 1rem;
         margin-bottom: 2.5rem;
+
+        li {
+            opacity: 0;
+
+            animation-name: fade-in;
+            animation-duration: .5s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+
+            @for $i from 1 to 10 {
+                &:nth-child(#{$i}) {
+                    animation-delay: calc(.15s * #{$i});
+                }
+            }
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(1rem); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     }
 
     button {
