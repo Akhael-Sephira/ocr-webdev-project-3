@@ -241,6 +241,33 @@
             <li><a href="mailto: abc@example.com">Contact</a></li>
         </ul>
     </footer>
+    <div id="loading-spinner">
+        <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="80" height="80">
+              <path fill="#D9D9D9" d="M0 0h80v80H0z"/>
+            </mask>
+            <g mask="url(#a)">
+              <mask id="b" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="40" width="80" height="40">
+                <path fill="#D9D9D9" d="M0 40h80v40H0z"/>
+              </mask>
+              <g id="circle1" mask="url(#b)">
+                <rect x="2.5" y="2.5" width="75" height="75" rx="37.5" stroke="#000" stroke-width="5"/>
+              </g>
+              <mask id="c" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="10" y="40" width="60" height="30">
+                <path fill="#D9D9D9" d="M10 40h60v30H10z"/>
+              </mask>
+              <g id="circle2" mask="url(#c)">
+                <rect x="12.5" y="12.5" width="55" height="55" rx="27.5" stroke="#000" stroke-width="5"/>
+              </g>
+              <mask id="d" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="40" width="40" height="20">
+                <path fill="#D9D9D9" d="M20 40h40v20H20z"/>
+              </mask>
+              <g id="circle3" mask="url(#d)">
+                <rect x="22.5" y="22.5" width="35" height="35" rx="17.5" stroke="#000" stroke-width="5"/>
+              </g>
+            </g>
+          </svg>
+    </div>
 </body>
 
 </html>

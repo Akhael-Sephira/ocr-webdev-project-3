@@ -1,0 +1,71 @@
+#loading-spinner {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    animation-name: stop;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+
+    @keyframes stop {
+        0%, 99% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+
+    svg {
+        --anim-dur: 1s;
+
+        rect {
+            stroke: white;
+        }
+        #circle1 {
+            transform-origin: 50% 50%;
+
+            animation-name: spin1;
+            animation-duration: var(--anim-dur);
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+
+            @keyframes spin1 {
+                0% { transform: rotateZ(0deg); }
+                100% { transform: rotateZ(360deg); }
+            }
+        }
+
+        #circle2 {
+            transform-origin: 50% 50%;
+
+            animation-name: spin2;
+            animation-duration: var(--anim-dur);
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+
+            @keyframes spin2 {
+                0% { transform: rotateZ(180deg); }
+                100% { transform: rotateZ(900deg); }
+            }
+        }
+
+        #circle3 {
+            transform-origin: 50% 50%;
+
+            animation-name: spin3;
+            animation-duration: var(--anim-dur);
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+
+            @keyframes spin3 {
+                0% { transform: rotateZ(00deg); }
+                100% { transform: rotateZ(-360deg); }
+            }
+        }
+    }
+}
