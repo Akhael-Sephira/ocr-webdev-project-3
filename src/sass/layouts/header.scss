@@ -14,7 +14,7 @@
         position: absolute;
         font-size: 1.5rem;
         top: 50%;
-        left: 1.5ch;
+        left: var(--body-margin);
         transform: translate(0%, -50%);
     }
 }
