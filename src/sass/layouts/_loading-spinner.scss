@@ -8,15 +8,20 @@
     justify-content: center;
     align-items: center;
 
-
     animation-name: stop;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 
     @keyframes stop {
-        0%, 99% { opacity: 1; }
-        100% { opacity: 0; }
+        0%, 99% { 
+            opacity: 1; 
+            pointer-events: all;
+        }
+        100% { 
+            opacity: 0; 
+            pointer-events: none;
+        }
     }
 
 
