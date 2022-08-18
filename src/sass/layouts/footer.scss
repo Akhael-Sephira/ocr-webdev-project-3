@@ -1,12 +1,12 @@
 footer {
     background-color: var(--clr-neutral-800);
-    padding: 1rem var(--body-margin);
+    padding: 1.5rem var(--body-margin);
 
     ul {
         list-style: none;
         display: grid;
         gap: 1ch;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
 
     .logo, a {
@@ -16,5 +16,11 @@ footer {
         text-decoration: none;
         display: flex;
         gap: 1ch;
+
+        svg {
+            width: .8em;
+            fill: white;
+        }
     }
+
 }
