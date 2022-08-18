@@ -1,4 +1,5 @@
 svg.heart {
+    --heart-bg: lightgrey;
 
     #Gradient1 {
         .stop1 {
@@ -15,7 +16,7 @@ svg.heart {
         transition: transform .5s ease;
     }
     #inner-fill {
-        fill: var(--card-bg);
+        fill: var(--heart-bg);
     }
     #outer-fill {
         fill: var(--clr-neutral-600);
