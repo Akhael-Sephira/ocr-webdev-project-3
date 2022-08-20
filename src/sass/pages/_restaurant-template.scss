@@ -1,7 +1,9 @@
 #restaurant-hero {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     display: block;
+
+    max-height: 50ch;
 
     position: relative;
     z-index: -2;
@@ -30,6 +32,16 @@
         }
     }
 
+    form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+        gap: 0 2rem;    
+
+        button {
+            grid-column: 1 / -1;
+        }
+    }
+
     h3 {
         font-weight: 400;
         text-transform: uppercase;
@@ -54,6 +66,7 @@
         margin-bottom: 2.5rem;
 
         li {
+            max-width: 47ch;
             opacity: 0;
 
             animation-name: fade-in;
