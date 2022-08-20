@@ -38,10 +38,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(35ch, 100%), 1fr));
         gap: 0 2rem;    
-
-        button {
-            grid-column: 1 / -1;
-        }
     }
 
     h3 {
@@ -79,7 +75,7 @@
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
 
-            @for $i from 1 to 10 {
+            @for $i from 1 to 15 {
                 &:nth-child(#{$i}) {
                     animation-delay: calc(.15s * #{$i});
                 }
@@ -92,8 +88,9 @@
         }
     }
 
-    button {
+    button[type="submit"] {
         display: block;
         margin: 0 auto;
+        grid-column: 1 / -1;
     }
 }

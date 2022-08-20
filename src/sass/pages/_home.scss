@@ -20,13 +20,14 @@
         max-width: 47ch;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+
+        > * {
+            display: flex;
+            align-items: center;
+            gap: 2ch;
+        }
     }
 
-    li > * {
-        display: flex;
-        align-items: center;
-        gap: 2ch;
-    }
 }
 
 #rest-section {
