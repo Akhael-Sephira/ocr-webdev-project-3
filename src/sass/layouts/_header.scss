@@ -1,20 +1,37 @@
 .header {
     text-align: center;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-    padding: 1.2rem 0px .7rem 0px;
-
+    position: relative;
+    
+    
     h1 {
+        padding: 1.2rem 0px .7rem 0px;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+        background-color: var(--clr-neutral-100);
         margin: 0;
+        z-index: 1;
+        position: relative;
     }
 
-    z-index: 1;
-    position: relative;
 
     &__home-btn {
         position: absolute;
+        z-index: 2;
         font-size: 1.5rem;
         top: 50%;
         left: var(--body-margin);
         transform: translate(0%, -50%);
+    }
+
+    &__location {
+        justify-self: stretch;
+        display: flex;
+        justify-content: center;
+        gap: 1.8ch;
+        padding: 1em;
+        background-color: var(--clr-neutral-300);
+        margin: 0;
+        
+        font-weight: 500;
+        color: var(--clr-neutral-800);
     }
 }
