@@ -9,6 +9,7 @@
     border-radius: 14px;
     overflow: hidden;
     background-color: var(--clr-neutral-100);
+    position: relative;
 
     &__container {
         display: grid;
@@ -59,10 +60,18 @@
             transition: transform var(--transition-duration) ease;
         }
     }
+    
+    &:focus-within {
+        outline: solid black 2px;
+    }
 
     input {
 
-        display: none;
+        display: block;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        z-index: -1;
 
         &:checked ~ .dish-checkbox__container {
             width: calc(100% - var(--indicator-size));
