@@ -1,0 +1,29 @@
+footer {
+    background-color: var(--clr-neutral-800);
+    padding: 1.5rem var(--body-margin);
+
+    ul {
+        list-style: none;
+        display: grid;
+        gap: 1ch;
+        margin-top: 1.5rem;
+
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    }
+
+    .logo, a {
+        color: white;
+    }
+    a {
+        text-decoration: none;
+        display: flex;
+        gap: 1ch;
+
+        width: fit-content;
+    }
+    
+    svg {
+        width: .8em;
+        fill: white;
+    }
+}
