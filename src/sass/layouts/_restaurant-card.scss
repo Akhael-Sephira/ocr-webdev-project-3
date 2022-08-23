@@ -86,8 +86,8 @@
         }
     }
 
-    &--new::after {
-        content: "Nouveau";
+    &[data-corner-text]::after {
+        content: attr(data-corner-text);
         position: absolute;
         z-index: 1;
         background-color: var(--clr-ter);
