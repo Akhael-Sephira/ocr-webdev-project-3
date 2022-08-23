@@ -24,19 +24,30 @@
         font-family: 'Shrikhand', cursive;
 
         margin-bottom: 2rem;
-
-        svg {
-            cursor: pointer;
-            width: 1.5em;
-            height: 1.5em;
-            margin-right: 1em;
-            --heart-bg: var(--menu-bg) !important;
-        }
     }
 
-    .restaurant-menu__heart {
-        border: none;
-        background-color: none;
+    &__heart {
+
+        position: relative;
+
+        input {
+            appearance: none;
+            cursor: pointer;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        input:checked + .heart {
+            &::after {
+                transform: translateY(-0%);
+            } 
+        }
+        .heart {
+            --heart-clr-inner: var(--menu-bg) !important;
+            width: 1.5em;
+            aspect-ratio: 1 / 1;
+        }
     }
 
     form {

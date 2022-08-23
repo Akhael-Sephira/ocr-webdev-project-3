@@ -36,8 +36,20 @@
     }
     &__title {
         grid-area: title;
+        font-size: 1.2rem;
         font-weight: 900;
         margin: 1em 0 0 0;
+
+        color: black;
+    }
+    &__link {
+        text-decoration: none;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+        }
     }
     &__info {
         grid-area: info;
@@ -45,28 +57,39 @@
     }
     &__heart {
         grid-area: heart;
-        border: none;
         background-color: transparent;
-        cursor: pointer;
-        width: 1.5em;
-        aspect-ratio: 1 / 1;
 
         align-self: center;
         justify-self: flex-end;
 
-        display: grid;
-        align-items: center;
+        position: relative;
+        z-index: 3;
 
-        > svg {
-            --heart-bg: var(--card-bg) !important;
-            width: 100%;
-            height: 100%;
+        --heart-clr-inner: var(--card-bg) !important;
+
+        input {
+            appearance: none;
+            cursor: pointer;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        input:checked + .heart {
+            &::after {
+                transform: translateY(-0%);
+            } 
+        }
+        .heart {
+            width: 1.5em;
+            aspect-ratio: 1 / 1;
         }
     }
 
     &--new::after {
         content: "Nouveau";
         position: absolute;
+        z-index: 1;
         background-color: var(--clr-ter);
         font-size: .8em;
         right: 1em;
