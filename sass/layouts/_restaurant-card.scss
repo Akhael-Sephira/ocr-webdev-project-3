@@ -64,25 +64,9 @@
 
         position: relative;
         z-index: 3;
-
-        --heart-clr-inner: var(--card-bg) !important;
-
-        input {
-            appearance: none;
-            cursor: pointer;
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-
-        input:checked + .heart {
-            &::after {
-                transform: translateY(-0%);
-            } 
-        }
+        
         .heart {
-            width: 1.5em;
-            aspect-ratio: 1 / 1;
+            --heart-clr-inner: var(--card-bg) !important;
         }
     }
 
