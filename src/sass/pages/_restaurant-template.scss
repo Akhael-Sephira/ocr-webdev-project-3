@@ -30,23 +30,8 @@
 
         position: relative;
 
-        input {
-            appearance: none;
-            cursor: pointer;
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-
-        input:checked + .heart {
-            &::after {
-                transform: translateY(-0%);
-            } 
-        }
         .heart {
             --heart-clr-inner: var(--menu-bg) !important;
-            width: 1.5em;
-            aspect-ratio: 1 / 1;
         }
     }
 
