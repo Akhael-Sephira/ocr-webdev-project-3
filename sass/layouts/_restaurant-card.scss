@@ -1,0 +1,103 @@
+.restaurant-card {
+    --card-bg: var(--clr-neutral-100);
+    background-color: var(--card-bg);
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    display: grid;
+    grid-template: 
+        "img img" 10em
+        "title heart"
+        "info heart";
+    
+    box-shadow: 0px 0px 1em 0 rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    
+    &__img {
+        grid-area: img;
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+
+        &--top {
+            object-position: 50% 0%;
+        }
+        &--center {
+            object-position: 50% 50%;
+        }
+        &--bottom {
+            object-position: 50% 100%;
+        }
+    }
+    & >:not(:first-child) {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    &__title {
+        grid-area: title;
+        font-size: 1.2rem;
+        font-weight: 900;
+        margin: 1em 0 0 0;
+
+        color: black;
+    }
+    &__link {
+        text-decoration: none;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+        }
+    }
+    &__info {
+        grid-area: info;
+        margin: 0 0 1em 0;
+    }
+    &__heart {
+        grid-area: heart;
+        background-color: transparent;
+
+        align-self: center;
+        justify-self: flex-end;
+
+        position: relative;
+        z-index: 3;
+
+        --heart-clr-inner: var(--card-bg) !important;
+
+        input {
+            appearance: none;
+            cursor: pointer;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        input:checked + .heart {
+            &::after {
+                transform: translateY(-0%);
+            } 
+        }
+        .heart {
+            width: 1.5em;
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    &[data-corner-text]::after {
+        content: attr(data-corner-text);
+        position: absolute;
+        z-index: 1;
+        background-color: var(--clr-ter);
+        font-size: .8em;
+        right: 1em;
+        top: 1em;
+        padding: .5em .75em;
+        font-weight: 700;
+        border-radius: .25em;
+        box-shadow: 0 0 .5em 0 rgba(0, 0, 0, 0.25);
+        color: var(--clr-ter-700);
+    }
+}

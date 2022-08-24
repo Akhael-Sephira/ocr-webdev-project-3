@@ -1,0 +1,43 @@
+
+.heart {
+    --heart-clr-bg: var(--clr-neutral-500);
+    --heart-clr-inner: #fff;
+    --heart-clr-fill: linear-gradient(180deg, var(--clr-pri), var(--clr-sec));
+
+    background: var(--heart-clr-bg);
+
+
+    mask-image: url("../assets/images/heart.svg");
+    -webkit-mask-image:url("../assets/images/heart.svg");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+
+    outline: solid 2px red;
+
+    position: relative;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: var(--heart-clr-inner);
+        transform: scale(.75);
+
+        mask-image: url("../assets/images/heart.svg");
+        -webkit-mask-image:url("../assets/images/heart.svg");
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+    }
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: var(--heart-clr-fill);
+        transform: translateY(100%);
+
+        transition: transform 1s ease;
+    }
+}

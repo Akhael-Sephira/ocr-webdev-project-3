@@ -1,0 +1,24 @@
+.fancy-btn {
+    border: none;
+    text-decoration: none;
+    background: linear-gradient(355deg, var(--clr-pri), var(--clr-sec));
+    color: var(--clr-neutral-100);
+    padding: .95em 1.25em;
+    border-radius: 1.5em;
+    font-weight: 400;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    box-shadow: 0px .2em .5em 0px rgba(0, 0, 0, 0.25);
+
+    &--wide {
+        padding: .95em 3em;
+    }
+
+    &:hover {
+        filter: brightness(1.1);
+        box-shadow: 0px .2em .5em 0px rgba(0, 0, 0, 0.55);
+    }
+}
